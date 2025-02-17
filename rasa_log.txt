@@ -1,0 +1,680 @@
+2025-02-17 19:55:31,809 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2025-02-17 19:55:31,809 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2025-02-17 19:55:31,810 [DEBUG]  Using the default number of Sanic workers (1).
+2025-02-17 19:55:31,911 [DEBUG]  Skipping telemetry reporting: no license hash found.
+2025-02-17 19:55:31,940 [DEBUG]  Connected to InMemoryTrackerStore.
+2025-02-17 19:55:31,940 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2025-02-17 19:55:31,941 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2025-02-17 19:55:31,941 [INFO ]  Loading model models/20250217-133950-faint-baggage.tar.gz...
+2025-02-17 19:55:32,007 [DEBUG]  Extracted model to '/tmp/tmp3cmp4h61'.
+2025-02-17 19:55:32,009 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2025-02-17 19:55:32,009 [DEBUG]  Node 'provide_SpacyNLP0' loading 'SpacyNLP.load' and kwargs: '{}'.
+2025-02-17 19:55:32,009 [INFO ]  Trying to load SpaCy model with name 'ru_core_news_sm'.
+2025-02-17 19:55:34,554 [INFO ]  Loading dictionaries from /home/aladdin/myenv/lib/python3.10/site-packages/pymorphy3_dicts_ru/data
+2025-02-17 19:55:34,589 [INFO ]  format: 2.4, revision: 417150, updated: 2022-01-08T22:09:24.565962
+2025-02-17 19:55:35,785 [DEBUG]  Node 'run_SpacyNLP0' loading 'SpacyNLP.load' and kwargs: '{}'.
+2025-02-17 19:55:35,786 [INFO ]  Trying to load SpaCy model with name 'ru_core_news_sm'.
+2025-02-17 19:55:35,939 [INFO ]  Loading dictionaries from /home/aladdin/myenv/lib/python3.10/site-packages/pymorphy3_dicts_ru/data
+2025-02-17 19:55:35,967 [INFO ]  format: 2.4, revision: 417150, updated: 2022-01-08T22:09:24.565962
+2025-02-17 19:55:37,112 [DEBUG]  Node 'run_SpacyTokenizer1' loading 'SpacyTokenizer.load' and kwargs: '{}'.
+2025-02-17 19:55:37,112 [DEBUG]  Node 'run_RegexFeaturizer2' loading 'RegexFeaturizer.load' and kwargs: '{}'.
+2025-02-17 19:55:37,112 [DEBUG]  Resource 'train_RegexFeaturizer2' was requested for reading.
+2025-02-17 19:55:37,113 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' loading 'LexicalSyntacticFeaturizer.load' and kwargs: '{}'.
+2025-02-17 19:55:37,113 [DEBUG]  Resource 'train_LexicalSyntacticFeaturizer3' was requested for reading.
+2025-02-17 19:55:37,113 [DEBUG]  Node 'run_CountVectorsFeaturizer4' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2025-02-17 19:55:37,113 [DEBUG]  Resource 'train_CountVectorsFeaturizer4' was requested for reading.
+2025-02-17 19:55:37,114 [DEBUG]  Node 'run_LanguageModelFeaturizer5' loading 'LanguageModelFeaturizer.load' and kwargs: '{}'.
+2025-02-17 19:55:38,756 [DEBUG]  Loading Tokenizer and Model for bert
+2025-02-17 19:55:38,758 [DEBUG]  Starting new HTTPS connection (1): huggingface.co:443
+2025-02-17 19:55:38,975 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-multilingual-cased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-02-17 19:55:39,377 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-multilingual-cased/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-17 19:55:43,686 [DEBUG]  Node 'run_DIETClassifier6' loading 'DIETClassifier.load' and kwargs: '{}'.
+2025-02-17 19:55:43,686 [DEBUG]  Resource 'train_DIETClassifier6' was requested for reading.
+2025-02-17 19:55:43,688 [DEBUG]  Loading the model from /tmp/tmpj9l2pfum/train_DIETClassifier6/DIETClassifier.tf_model with finetune_mode=False...
+2025-02-17 19:55:43,707 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2025-02-17 19:55:43,734 [DEBUG]  Following metrics will be logged during training: 
+2025-02-17 19:55:43,734 [DEBUG]    t_loss (total loss)
+2025-02-17 19:55:43,734 [DEBUG]    i_acc (intent acc)
+2025-02-17 19:55:43,734 [DEBUG]    i_loss (intent loss)
+2025-02-17 19:55:52,090 [DEBUG]  Finished loading the model.
+2025-02-17 19:55:52,091 [DEBUG]  Node 'run_EntitySynonymMapper7' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2025-02-17 19:55:52,091 [DEBUG]  Resource 'train_EntitySynonymMapper7' was requested for reading.
+2025-02-17 19:55:52,092 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper7' doesn't exist.
+2025-02-17 19:55:52,092 [DEBUG]  Node 'run_ResponseSelector8' loading 'ResponseSelector.load' and kwargs: '{}'.
+2025-02-17 19:55:52,092 [DEBUG]  Resource 'train_ResponseSelector8' was requested for reading.
+2025-02-17 19:55:52,092 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_ResponseSelector8' doesn't exist.
+2025-02-17 19:55:52,093 [DEBUG]  Resource 'train_ResponseSelector8' was requested for reading.
+2025-02-17 19:55:52,093 [DEBUG]  Failed to load ResponseSelector from model storage. Resource 'train_ResponseSelector8' doesn't exist.
+2025-02-17 19:55:52,093 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2025-02-17 19:55:52,093 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2025-02-17 19:55:52,093 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2025-02-17 19:55:52,114 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2025-02-17 19:55:52,114 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2025-02-17 19:55:52,115 [DEBUG]  Node 'run_RulePolicy1' loading 'RulePolicy.load' and kwargs: '{}'.
+2025-02-17 19:55:52,115 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2025-02-17 19:55:52,115 [DEBUG]  Node 'run_TEDPolicy2' loading 'TEDPolicy.load' and kwargs: '{}'.
+2025-02-17 19:55:52,116 [DEBUG]  Resource 'train_TEDPolicy2' was requested for reading.
+2025-02-17 19:55:52,118 [DEBUG]  Loading the model from /tmp/tmpj9l2pfum/train_TEDPolicy2/ted_policy.tf_model with finetune_mode=False...
+2025-02-17 19:56:03,442 [DEBUG]  Finished loading the model.
+2025-02-17 19:56:03,443 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2025-02-17 19:56:03,443 [DEBUG]  Resource 'train_RulePolicy1' was requested for reading.
+2025-02-17 19:56:03,444 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2025-02-17 19:56:03,446 [INFO ]  Rasa server is up and running.
+2025-02-17 19:56:03,447 [INFO ]  Enabling coroutine debugging. Loop id 1084356128.
+2025-02-17 19:58:27,905 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 19:58:27,905 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 19:58:27,905 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 19:58:27,905 [DEBUG]  Could not find tracker for conversation ID 'PractikumStudent'.
+2025-02-17 19:58:27,905 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 19:58:27,906 [DEBUG]  Starting a new session for conversation ID 'PractikumStudent'.
+2025-02-17 19:58:27,907 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 19:58:27,908 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_session_start[0m [36mrasa_events[0m=[35m[<rasa.shared.core.events.SessionStarted object at 0x75670d469b40>, ActionExecuted(action: action_listen, policy: None, confidence: None)][0m
+2025-02-17 19:58:27,908 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.slots.log           [0m [36mslot_values[0m=[35m	topic: None
+	session_started_metadata: None[0m
+2025-02-17 19:58:27,908 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7567f55dfe50>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:27,909 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 19:58:27,909 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 19:58:27,909 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 19:58:27,916 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 19:58:27,917 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 19:58:27,917 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 19:58:27,917 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 19:58:27,918 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 19:58:28,155 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 19:58:28,317 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 19:58:28,318 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 19:58:28,318 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 19:58:28,318 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 19:58:28,319 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:28,319 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 19:58:28,319 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'greet', 'confidence': 0.9401271343231201}[0m [36mparse_data_text[0m=[35mРџСЂРёРІРµС‚[0m
+2025-02-17 19:58:28,320 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2025-02-17 19:58:28,321 [DEBUG]  Validating extracted slots: topic
+2025-02-17 19:58:28,321 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: РџСЂРёРІРµС‚)][0m
+2025-02-17 19:58:28,322 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:28,322 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:58:28,322 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:28,322 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,323 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 19:58:28,323 [DEBUG]  There is a memorised next action 'utter_greet'
+2025-02-17 19:58:28,323 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,324 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user text: РџСЂРёРІРµС‚ | previous action name: action_listen[0m
+2025-02-17 19:58:28,324 [DEBUG]  There is no applicable rule.
+2025-02-17 19:58:28,324 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen[0m
+2025-02-17 19:58:28,324 [DEBUG]  There is a rule for the next action 'utter_greet'.
+2025-02-17 19:58:28,324 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,330 [DEBUG]  TED predicted 'utter_greet' based on user intent.
+2025-02-17 19:58:28,331 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:58:28,331 [DEBUG]  Made prediction using user intent.
+2025-02-17 19:58:28,331 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 19:58:28,331 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:58:28,332 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2025-02-17 19:58:28,332 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d46b400>][0m
+2025-02-17 19:58:28,333 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_greet[0m [36mrasa_events[0m=[35m[BotUttered('РџСЂРёРІРµС‚! Р§РµРј РјРѕРіСѓ РїРѕРјРѕС‡СЊ РІ РѕР±Р»Р°СЃС‚Рё Р°СЂС…РёС‚РµРєС‚СѓСЂС‹ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_greet"}, 1739822308.3328192)][0m
+2025-02-17 19:58:28,333 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:28,334 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:58:28,334 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:28,334 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,335 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}][0m
+2025-02-17 19:58:28,335 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 19:58:28,335 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,335 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet[0m
+2025-02-17 19:58:28,336 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 19:58:28,336 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:58:28,340 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:58:28,341 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:58:28,341 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:58:28,341 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 19:58:28,342 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 19:58:28,342 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 19:58:28,342 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 19:58:28,343 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 19:58:58,966 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 19:58:58,966 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 19:58:58,966 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 19:58:58,966 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 19:58:58,968 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7567f5a2ac50>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:58,968 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 19:58:58,968 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 19:58:58,969 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 19:58:58,975 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 19:58:58,976 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 19:58:58,976 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 19:58:58,976 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 19:58:58,977 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 19:58:59,190 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 19:58:59,196 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 19:58:59,196 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 19:58:59,197 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 19:58:59,197 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 19:58:59,197 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:59,197 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 19:58:59,197 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'ask_architecture', 'confidence': 0.7470639944076538}[0m [36mparse_data_text[0m=[35mР Р°СЃСЃРєР°Р¶Рё РїСЂРѕ РјРёРєСЂРѕСЃРµСЂРІРёСЃС‹[0m
+2025-02-17 19:58:59,198 [DEBUG]  Logged UserUtterance - tracker now has 10 events.
+2025-02-17 19:58:59,198 [DEBUG]  Validating extracted slots: topic
+2025-02-17 19:58:59,198 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: Р Р°СЃСЃРєР°Р¶Рё РїСЂРѕ РјРёРєСЂРѕСЃРµСЂРІРёСЃС‹)][0m
+2025-02-17 19:58:59,199 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:59,199 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:58:59,199 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:59,199 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,200 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}, {'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 19:58:59,200 [DEBUG]  There is a memorised next action 'utter_architecture_response'
+2025-02-17 19:58:59,200 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,201 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user text: Р Р°СЃСЃРєР°Р¶Рё РїСЂРѕ РјРёРєСЂРѕСЃРµСЂРІРёСЃС‹ | previous action name: action_listen[0m
+2025-02-17 19:58:59,201 [DEBUG]  There is no applicable rule.
+2025-02-17 19:58:59,201 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen[0m
+2025-02-17 19:58:59,201 [DEBUG]  There is a rule for the next action 'utter_architecture_response'.
+2025-02-17 19:58:59,202 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,206 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:58:59,206 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:58:59,206 [DEBUG]  Made prediction using user intent.
+2025-02-17 19:58:59,206 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 19:58:59,206 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:58:59,207 [DEBUG]  Predicted next action 'utter_architecture_response' with confidence 1.00.
+2025-02-17 19:58:59,207 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75671786bc70>][0m
+2025-02-17 19:58:59,208 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_architecture_response[0m [36mrasa_events[0m=[35m[BotUttered('РђСЂС…РёС‚РµРєС‚СѓСЂР° РџРћ РІРєР»СЋС‡Р°РµС‚ РІС‹Р±РѕСЂ СЃС‚СЂСѓРєС‚СѓСЂ, РєРѕС‚РѕСЂС‹Рµ РѕР±РµСЃРїРµС‡РёРІР°СЋС‚ РјР°СЃС€С‚Р°Р±РёСЂСѓРµРјРѕСЃС‚СЊ, РіРёР±РєРѕСЃС‚СЊ Рё РїРѕРґРґРµСЂР¶РёРІР°РµРјРѕСЃС‚СЊ РїСЂРёР»РѕР¶РµРЅРёСЏ. Р—Р°РґР°Р№С‚Рµ РєРѕРЅРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ РїРѕ СЌС‚РѕР№ С‚РµРјРµ, Рё СЏ РїРѕРјРѕРіСѓ РІР°Рј СЃ РёРЅС„РѕСЂРјР°С†РёРµР№.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_architecture_response"}, 1739822339.2075973)][0m
+2025-02-17 19:58:59,208 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783d8d0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:58:59,208 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:58:59,208 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:58:59,209 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,209 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'utter_architecture_response'}}][0m
+2025-02-17 19:58:59,209 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 19:58:59,209 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,210 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response[0m
+2025-02-17 19:58:59,210 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 19:58:59,210 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:58:59,214 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:58:59,214 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:58:59,215 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:58:59,215 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 19:58:59,215 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 19:58:59,215 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 19:58:59,216 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 19:58:59,216 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:26,729 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 19:59:26,729 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:26,729 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:26,730 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 19:59:26,731 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7567f5a2ac50>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:26,732 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 19:59:26,732 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 19:59:26,732 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 19:59:26,738 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 19:59:26,738 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 19:59:26,738 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 19:59:26,739 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 19:59:26,739 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 19:59:26,929 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 19:59:26,934 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 19:59:26,934 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 19:59:26,934 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 19:59:26,934 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 19:59:26,935 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:26,935 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 19:59:26,935 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'goodbye', 'confidence': 0.4219396710395813}[0m [36mparse_data_text[0m=[35mРџРѕРєР°[0m
+2025-02-17 19:59:26,936 [DEBUG]  Logged UserUtterance - tracker now has 16 events.
+2025-02-17 19:59:26,936 [DEBUG]  Validating extracted slots: topic
+2025-02-17 19:59:26,936 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: РџРѕРєР°)][0m
+2025-02-17 19:59:26,936 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:26,937 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:59:26,937 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:26,937 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,938 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'utter_architecture_response'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 19:59:26,938 [DEBUG]  There is no memorised next action
+2025-02-17 19:59:26,938 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,939 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user text: РџРѕРєР° | previous action name: action_listen[0m
+2025-02-17 19:59:26,939 [DEBUG]  There is no applicable rule.
+2025-02-17 19:59:26,939 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen[0m
+2025-02-17 19:59:26,939 [DEBUG]  There is a rule for the next action 'utter_goodbye'.
+2025-02-17 19:59:26,940 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,944 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:59:26,945 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:59:26,945 [DEBUG]  Made prediction using user intent.
+2025-02-17 19:59:26,945 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 19:59:26,945 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:59:26,946 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 1.00.
+2025-02-17 19:59:26,946 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d46bee0>][0m
+2025-02-17 19:59:26,947 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_goodbye[0m [36mrasa_events[0m=[35m[BotUttered('Р”Рѕ СЃРІРёРґР°РЅРёСЏ! Р•СЃР»Рё РїРѕСЏРІСЏС‚СЃСЏ РІРѕРїСЂРѕСЃС‹ РїРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ РџРћ, РѕР±СЂР°С‰Р°Р№С‚РµСЃСЊ.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_goodbye"}, 1739822366.9467177)][0m
+2025-02-17 19:59:26,947 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:26,948 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:59:26,948 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:26,948 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,949 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}][0m
+2025-02-17 19:59:26,949 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 19:59:26,949 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,950 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye[0m
+2025-02-17 19:59:26,950 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 19:59:26,950 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:59:26,955 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:59:26,955 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:59:26,955 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:59:26,956 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 19:59:26,956 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 19:59:26,956 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 19:59:26,957 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 19:59:26,957 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:50,545 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 19:59:50,545 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:50,545 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 19:59:50,545 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 19:59:50,547 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x75670c354c40>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:50,548 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 19:59:50,548 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 19:59:50,548 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 19:59:50,554 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 19:59:50,554 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 19:59:50,554 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 19:59:50,555 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 19:59:50,555 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 19:59:50,747 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 19:59:50,752 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 19:59:50,752 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 19:59:50,752 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 19:59:50,752 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 19:59:50,753 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:50,753 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 19:59:50,753 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'greet', 'confidence': 0.9499824047088623}[0m [36mparse_data_text[0m=[35mHello[0m
+2025-02-17 19:59:50,754 [DEBUG]  Logged UserUtterance - tracker now has 22 events.
+2025-02-17 19:59:50,754 [DEBUG]  Validating extracted slots: topic
+2025-02-17 19:59:50,754 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: Hello)][0m
+2025-02-17 19:59:50,755 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:50,755 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:59:50,755 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:50,756 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,756 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 19:59:50,756 [DEBUG]  There is no memorised next action
+2025-02-17 19:59:50,757 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,757 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user text: Hello | previous action name: action_listen[0m
+2025-02-17 19:59:50,757 [DEBUG]  There is no applicable rule.
+2025-02-17 19:59:50,758 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen[0m
+2025-02-17 19:59:50,758 [DEBUG]  There is a rule for the next action 'utter_greet'.
+2025-02-17 19:59:50,759 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,763 [DEBUG]  TED predicted 'utter_greet' based on user intent.
+2025-02-17 19:59:50,764 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:59:50,764 [DEBUG]  Made prediction using user intent.
+2025-02-17 19:59:50,764 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 19:59:50,764 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:59:50,764 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2025-02-17 19:59:50,765 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d46a2f0>][0m
+2025-02-17 19:59:50,765 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_greet[0m [36mrasa_events[0m=[35m[BotUttered('РџСЂРёРІРµС‚! Р§РµРј РјРѕРіСѓ РїРѕРјРѕС‡СЊ РІ РѕР±Р»Р°СЃС‚Рё Р°СЂС…РёС‚РµРєС‚СѓСЂС‹ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_greet"}, 1739822390.7652602)][0m
+2025-02-17 19:59:50,766 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 19:59:50,766 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 19:59:50,766 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 19:59:50,766 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,767 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}][0m
+2025-02-17 19:59:50,767 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 19:59:50,767 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,768 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet[0m
+2025-02-17 19:59:50,768 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 19:59:50,768 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 19:59:50,773 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 19:59:50,773 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 19:59:50,773 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 19:59:50,773 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 19:59:50,774 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 19:59:50,774 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 19:59:50,774 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 19:59:50,775 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:02,121 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 20:00:02,122 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:02,122 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:02,122 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 20:00:02,124 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x75670d17c7f0>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:02,125 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 20:00:02,125 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 20:00:02,125 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 20:00:02,131 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 20:00:02,132 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 20:00:02,132 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 20:00:02,132 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 20:00:02,133 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 20:00:02,328 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 20:00:02,334 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 20:00:02,334 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 20:00:02,334 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 20:00:02,334 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 20:00:02,335 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:02,335 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 20:00:02,335 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'goodbye', 'confidence': 0.25183770060539246}[0m [36mparse_data_text[0m=[35mРҐР°Р№![0m
+2025-02-17 20:00:02,336 [DEBUG]  Logged UserUtterance - tracker now has 28 events.
+2025-02-17 20:00:02,336 [DEBUG]  Validating extracted slots: topic
+2025-02-17 20:00:02,336 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: РҐР°Р№!)][0m
+2025-02-17 20:00:02,337 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:02,337 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:02,337 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:02,337 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,338 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 20:00:02,338 [DEBUG]  There is no memorised next action
+2025-02-17 20:00:02,338 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,339 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user text: РҐР°Р№! | previous action name: action_listen[0m
+2025-02-17 20:00:02,339 [DEBUG]  There is no applicable rule.
+2025-02-17 20:00:02,339 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen[0m
+2025-02-17 20:00:02,340 [DEBUG]  There is a rule for the next action 'utter_goodbye'.
+2025-02-17 20:00:02,340 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,344 [DEBUG]  TED predicted 'utter_greet' based on user intent.
+2025-02-17 20:00:02,345 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:02,345 [DEBUG]  Made prediction using user intent.
+2025-02-17 20:00:02,345 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 20:00:02,345 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:02,345 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 1.00.
+2025-02-17 20:00:02,346 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d468730>][0m
+2025-02-17 20:00:02,346 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_goodbye[0m [36mrasa_events[0m=[35m[BotUttered('Р”Рѕ СЃРІРёРґР°РЅРёСЏ! Р•СЃР»Рё РїРѕСЏРІСЏС‚СЃСЏ РІРѕРїСЂРѕСЃС‹ РїРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ РџРћ, РѕР±СЂР°С‰Р°Р№С‚РµСЃСЊ.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_goodbye"}, 1739822402.3462896)][0m
+2025-02-17 20:00:02,347 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x75671783c7c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:02,347 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:02,347 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:02,347 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,348 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}][0m
+2025-02-17 20:00:02,348 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 20:00:02,348 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,349 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye[0m
+2025-02-17 20:00:02,349 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 20:00:02,349 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:02,354 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 20:00:02,354 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:02,355 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:02,355 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 20:00:02,355 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 20:00:02,356 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 20:00:02,356 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 20:00:02,357 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:21,346 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 20:00:21,346 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:21,346 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:21,346 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 20:00:21,349 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x75670d17c7f0>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:21,349 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 20:00:21,349 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 20:00:21,349 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 20:00:21,356 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 20:00:21,356 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 20:00:21,356 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 20:00:21,356 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 20:00:21,357 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 20:00:21,551 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 20:00:21,556 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 20:00:21,556 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 20:00:21,556 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 20:00:21,556 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 20:00:21,556 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:21,556 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 20:00:21,557 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'goodbye', 'confidence': 0.4417702853679657}[0m [36mparse_data_text[0m=[35mР”Рѕ СЃРІРёРґР°РЅРёСЏ[0m
+2025-02-17 20:00:21,557 [DEBUG]  Logged UserUtterance - tracker now has 34 events.
+2025-02-17 20:00:21,557 [DEBUG]  Validating extracted slots: topic
+2025-02-17 20:00:21,558 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: Р”Рѕ СЃРІРёРґР°РЅРёСЏ)][0m
+2025-02-17 20:00:21,558 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:21,558 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:21,558 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:21,559 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,559 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 20:00:21,560 [DEBUG]  There is no memorised next action
+2025-02-17 20:00:21,560 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,560 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user text: Р”Рѕ СЃРІРёРґР°РЅРёСЏ | previous action name: action_listen[0m
+2025-02-17 20:00:21,560 [DEBUG]  There is no applicable rule.
+2025-02-17 20:00:21,561 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user intent: goodbye | previous action name: action_listen[0m
+2025-02-17 20:00:21,561 [DEBUG]  There is a rule for the next action 'utter_goodbye'.
+2025-02-17 20:00:21,561 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,566 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 20:00:21,566 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:21,566 [DEBUG]  Made prediction using user intent.
+2025-02-17 20:00:21,566 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 20:00:21,566 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:21,567 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 1.00.
+2025-02-17 20:00:21,567 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d4683a0>][0m
+2025-02-17 20:00:21,568 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_goodbye[0m [36mrasa_events[0m=[35m[BotUttered('Р”Рѕ СЃРІРёРґР°РЅРёСЏ! Р•СЃР»Рё РїРѕСЏРІСЏС‚СЃСЏ РІРѕРїСЂРѕСЃС‹ РїРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ РџРћ, РѕР±СЂР°С‰Р°Р№С‚РµСЃСЊ.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_goodbye"}, 1739822421.5676224)][0m
+2025-02-17 20:00:21,568 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:21,568 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:21,568 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:21,569 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,569 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}][0m
+2025-02-17 20:00:21,569 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 20:00:21,570 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,570 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user intent: goodbye | previous action name: action_listen
+[state 12] user intent: goodbye | previous action name: utter_goodbye[0m
+2025-02-17 20:00:21,570 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 20:00:21,571 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:21,575 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 20:00:21,575 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:21,576 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:21,576 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 20:00:21,576 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 20:00:21,576 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 20:00:21,577 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 20:00:21,577 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:42,990 [DEBUG]  Issuing ticket for conversation 'PractikumStudent'.
+2025-02-17 20:00:42,990 [DEBUG]  Acquiring lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:42,990 [DEBUG]  Acquired lock for conversation 'PractikumStudent'.
+2025-02-17 20:00:42,990 [DEBUG]  Recreating tracker for id 'PractikumStudent'
+2025-02-17 20:00:42,993 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7567f55ded70>], '__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:42,994 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2025-02-17 20:00:42,994 [DEBUG]  Node 'provide_SpacyNLP0' running 'SpacyNLP.provide'.
+2025-02-17 20:00:42,994 [DEBUG]  Node 'run_SpacyNLP0' running 'SpacyNLP.process'.
+2025-02-17 20:00:43,001 [DEBUG]  Node 'run_SpacyTokenizer1' running 'SpacyTokenizer.process'.
+2025-02-17 20:00:43,001 [DEBUG]  Node 'run_RegexFeaturizer2' running 'RegexFeaturizer.process'.
+2025-02-17 20:00:43,001 [DEBUG]  Node 'run_LexicalSyntacticFeaturizer3' running 'LexicalSyntacticFeaturizer.process'.
+2025-02-17 20:00:43,001 [DEBUG]  Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2025-02-17 20:00:43,002 [DEBUG]  Node 'run_LanguageModelFeaturizer5' running 'LanguageModelFeaturizer.process'.
+2025-02-17 20:00:43,212 [DEBUG]  Node 'run_DIETClassifier6' running 'DIETClassifier.process'.
+2025-02-17 20:00:43,217 [DEBUG]  Node 'run_EntitySynonymMapper7' running 'EntitySynonymMapper.process'.
+2025-02-17 20:00:43,217 [DEBUG]  Node 'run_ResponseSelector8' running 'ResponseSelector.process'.
+2025-02-17 20:00:43,218 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2025-02-17 20:00:43,218 [DEBUG]  Adding following selector key to message property: default
+2025-02-17 20:00:43,218 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:43,218 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2025-02-17 20:00:43,218 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.message.parse       [0m [36mparse_data_entities[0m=[35m[][0m [36mparse_data_intent[0m=[35m{'name': 'ask_architecture', 'confidence': 0.8564873933792114}[0m [36mparse_data_text[0m=[35mР Р°СЃСЃРєР°Р¶Рё РїСЂРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂСѓ[0m
+2025-02-17 20:00:43,219 [DEBUG]  Logged UserUtterance - tracker now has 40 events.
+2025-02-17 20:00:43,219 [DEBUG]  Validating extracted slots: topic
+2025-02-17 20:00:43,219 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.extract.slots       [0m [36maction_extract_slot[0m=[35maction_extract_slots[0m [36mlen_extraction_events[0m=[35m1[0m [36mrasa_events[0m=[35m[SlotSet(key: topic, value: Р Р°СЃСЃРєР°Р¶Рё РїСЂРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂСѓ)][0m
+2025-02-17 20:00:43,220 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:43,220 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:43,220 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:43,220 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,221 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'goodbye'}, 'prev_action': {'action_name': 'utter_goodbye'}}, {'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'action_listen'}}][0m
+2025-02-17 20:00:43,221 [DEBUG]  There is no memorised next action
+2025-02-17 20:00:43,222 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,222 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user intent: goodbye | previous action name: action_listen
+[state 12] user intent: goodbye | previous action name: utter_goodbye
+[state 13] user text: Р Р°СЃСЃРєР°Р¶Рё РїСЂРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂСѓ | previous action name: action_listen[0m
+2025-02-17 20:00:43,222 [DEBUG]  There is no applicable rule.
+2025-02-17 20:00:43,223 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user intent: goodbye | previous action name: action_listen
+[state 12] user intent: goodbye | previous action name: utter_goodbye
+[state 13] user intent: ask_architecture | previous action name: action_listen[0m
+2025-02-17 20:00:43,223 [DEBUG]  There is a rule for the next action 'utter_architecture_response'.
+2025-02-17 20:00:43,223 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,229 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 20:00:43,229 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:43,229 [DEBUG]  Made prediction using user intent.
+2025-02-17 20:00:43,229 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2025-02-17 20:00:43,230 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:43,230 [DEBUG]  Predicted next action 'utter_architecture_response' with confidence 1.00.
+2025-02-17 20:00:43,230 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x75670d469ea0>][0m
+2025-02-17 20:00:43,231 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35mutter_architecture_response[0m [36mrasa_events[0m=[35m[BotUttered('РђСЂС…РёС‚РµРєС‚СѓСЂР° РџРћ РІРєР»СЋС‡Р°РµС‚ РІС‹Р±РѕСЂ СЃС‚СЂСѓРєС‚СѓСЂ, РєРѕС‚РѕСЂС‹Рµ РѕР±РµСЃРїРµС‡РёРІР°СЋС‚ РјР°СЃС€С‚Р°Р±РёСЂСѓРµРјРѕСЃС‚СЊ, РіРёР±РєРѕСЃС‚СЊ Рё РїРѕРґРґРµСЂР¶РёРІР°РµРјРѕСЃС‚СЊ РїСЂРёР»РѕР¶РµРЅРёСЏ. Р—Р°РґР°Р№С‚Рµ РєРѕРЅРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ РїРѕ СЌС‚РѕР№ С‚РµРјРµ, Рё СЏ РїРѕРјРѕРіСѓ РІР°Рј СЃ РёРЅС„РѕСЂРјР°С†РёРµР№.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_architecture_response"}, 1739822443.2308328)][0m
+2025-02-17 20:00:43,231 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7567179d4940>}, targets: ['select_prediction'] and ExecutionContext(model_id='ff4ab77717f6477791e7f2ec7106237e', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2025-02-17 20:00:43,232 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2025-02-17 20:00:43,232 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2025-02-17 20:00:43,232 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,233 [DEBUG]  [[32m[1mdebug    [0m] [1mmemoization.predict.actions   [0m [36mtracker_states[0m=[35m[{'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'ask_architecture'}, 'prev_action': {'action_name': 'utter_architecture_response'}}][0m
+2025-02-17 20:00:43,233 [DEBUG]  There is a memorised next action 'action_listen'
+2025-02-17 20:00:43,233 [DEBUG]  Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,234 [DEBUG]  [[32m[1mdebug    [0m] [1mrule_policy.actions.find      [0m [36mcurrent_states[0m=[35m
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+[state 3] user intent: ask_architecture | previous action name: action_listen
+[state 4] user intent: ask_architecture | previous action name: utter_architecture_response
+[state 5] user intent: goodbye | previous action name: action_listen
+[state 6] user intent: goodbye | previous action name: utter_goodbye
+[state 7] user intent: greet | previous action name: action_listen
+[state 8] user intent: greet | previous action name: utter_greet
+[state 9] user intent: goodbye | previous action name: action_listen
+[state 10] user intent: goodbye | previous action name: utter_goodbye
+[state 11] user intent: goodbye | previous action name: action_listen
+[state 12] user intent: goodbye | previous action name: utter_goodbye
+[state 13] user intent: ask_architecture | previous action name: action_listen
+[state 14] user intent: ask_architecture | previous action name: utter_architecture_response[0m
+2025-02-17 20:00:43,234 [DEBUG]  There is a rule for the next action 'action_listen'.
+2025-02-17 20:00:43,234 [DEBUG]  Node 'run_TEDPolicy2' running 'TEDPolicy.predict_action_probabilities'.
+2025-02-17 20:00:43,239 [DEBUG]  TED predicted 'action_restart' based on user intent.
+2025-02-17 20:00:43,239 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2025-02-17 20:00:43,239 [DEBUG]  Predicted next action using RulePolicy.
+2025-02-17 20:00:43,239 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2025-02-17 20:00:43,240 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.policy_prediction[0m [36mprediction_events[0m=[35m[][0m
+2025-02-17 20:00:43,240 [DEBUG]  [[32m[1mdebug    [0m] [1mprocessor.actions.log         [0m [36maction_name[0m=[35maction_listen[0m [36mrasa_events[0m=[35m[][0m
+2025-02-17 20:00:43,240 [DEBUG]  No event broker configured. Skipping streaming events.
+2025-02-17 20:00:43,241 [DEBUG]  Deleted lock for conversation 'PractikumStudent'.
